@@ -154,7 +154,7 @@ main {
                 background-repeat: no-repeat;
                 background-position: left bottom;
                 background-size: cover;
-                overflow-x: hidden;
+                overflow: hidden;
 
                 & > img {
                     width: 850px;
@@ -517,3 +517,4 @@ footer {
         }
     }
 }
+
