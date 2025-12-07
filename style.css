@@ -400,7 +400,7 @@ footer {
                     justify-content: center;
                     left: 0;
                     top: 0;
-                    height: 550px;
+                    height: 630px;
                     background-image: url("images/bg-intro-mobile.svg");
                     background-repeat: no-repeat;
                     background-position: center;
@@ -517,4 +517,3 @@ footer {
         }
     }
 }
-
