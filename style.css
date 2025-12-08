@@ -17,14 +17,14 @@
     box-sizing: border-box;
 }
 
-html {
+/* html {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
     display: none;
-}
+} */
 
 body {
     font-family: "Public Sans", sans-serif;
@@ -76,8 +76,9 @@ button {
 header {
     display: grid;
     justify-items: center;
-    z-index: 10;
+    padding: 0 20px;
     position: relative;
+    z-index: 2;
     background-color: var(--white);
 
     & > nav {
@@ -85,13 +86,13 @@ header {
         justify-content: space-between;
         height: 80px;
         align-items: center;
-        max-width: 1112px;
         width: 100%;
+        max-width: 1130px;
 
         & > ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 24px;
             height: 100%;
 
             & > li {
@@ -116,24 +117,24 @@ header {
 main {
     & > .next-generation {
         background-color: var(--gray50);
-        height: 600px;
+        padding: 0 20px;
         display: grid;
-        place-items: center;
-        z-index: 5;
+        justify-items: center;
 
         & > .next-gen {
-            position: relative;
             width: 100%;
-            max-width: 1112px;
-            height: 100%;
-            display: flex;
+            max-width: 1130px;
+            height: 700px;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            align-items: center;
+            position: relative;
 
             & > .left {
                 width: 400px;
-                height: fit-content;
                 display: grid;
-                gap: 20px;
-                align-self: center;
+                gap: 30px;
+                height: fit-content;
 
                 & > h1 {
                     font-size: 50px;
@@ -146,53 +147,65 @@ main {
             }
 
             & > .right {
-                position: absolute;
-                left: 450px;
                 width: 100%;
-                height: 100%;
+                height: 700px;
                 background-image: url("images/bg-intro-desktop.svg");
+                background-position: center left;
+                background-size: 150% 150%;
                 background-repeat: no-repeat;
-                background-position: left bottom;
-                background-size: cover;
-                /* overflow-x: hidden; */
+                position: absolute;
+                top: 0;
+                left: 500px;
+                display: grid;
+                justify-items: center;
 
                 & > img {
                     width: 850px;
                     height: 1000px;
                     position: absolute;
-                    top: -200px;
-                    left: 100px;
+                    top: -170px;
                 }
+            }
+        }
+    }
+
+    & > .why-digitalbank,
+    & > article {
+        padding: 120px 20px;
+        display: grid;
+        justify-items: center;
+        gap: 30px;
+
+        & > h2 {
+            font-size: 40px;
+            font-weight: 200;
+            width: 100%;
+            max-width: 1130px;
+        }
+
+        & > p {
+            width: 100%;
+            max-width: 1130px;
+        }
+
+        & > .reasons,
+        & > .articles {
+            display: flex;
+            gap: 30px;
+
+            & > .reason,
+            & > .article {
+                width: 260px;
+                display: grid;
             }
         }
     }
 
     & > .why-digitalbank {
         background-color: var(--gray100);
-        padding: 120px 0;
-        display: grid;
-        justify-items: center;
-        gap: 30px;
-
-        & > h2,
-        & > p {
-            width: 100%;
-            max-width: 1112px;
-        }
-
-        & > h2 {
-            font-size: 40px;
-            font-weight: 200;
-        }
 
         & > .reasons {
-            display: flex;
-            gap: 30px;
-            width: fit-content;
-
             & > .reason {
-                width: 260px;
-                display: grid;
                 gap: 15px;
 
                 & > img {
@@ -208,26 +221,10 @@ main {
     }
 
     & > article {
-        padding: 120px 0;
-        display: grid;
-        justify-items: center;
-        gap: 30px;
         background-color: var(--gray50);
 
-        & > h2 {
-            font-size: 40px;
-            font-weight: 200;
-            width: 100%;
-            max-width: 1112px;
-        }
-
         & > .articles {
-            display: flex;
-            gap: 30px;
-
             & > .article {
-                width: 260px;
-                display: grid;
                 gap: 10px;
                 background-color: var(--white);
                 border-radius: 5px;
@@ -325,93 +322,64 @@ footer {
 }
 
 @media screen and (max-width: 1220px) {
-    header,
-    footer {
-        padding: 0 20px;
-    }
-
     main {
-        & > .next-generation > .next-gen {
-            max-width: unset;
-            padding-left: 50px;
-        }
-
-        & > .why-digitalbank,
-        & > article {
-            padding: 120px 50px;
-        }
-
         & > .why-digitalbank > .reasons,
         & > article > .articles {
             width: 100%;
-            display: grid;
+            display: grid !important;
             grid-template-columns: 1fr 1fr;
             justify-items: center;
         }
     }
 }
 
-@media screen and (max-width: 1152px) {
-    header > nav,
-    footer > .footer {
-        width: 96.53%;
-    }
-}
-
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1090px) {
     main {
-        & > .next-generation {
-            background-color: var(--gray50);
-            height: 1020px;
-            display: grid;
-            place-items: center;
-            z-index: 5;
+        & > .next-generation > .next-gen {
+            width: 100%;
+            max-width: 1130px;
+            height: 1300px;
+            display: flex;
+            flex-direction: row-reverse;
+            position: relative;
 
-            & > .next-gen {
-                position: relative;
-                width: 100%;
-                max-width: 1112px;
-                height: 100%;
-                display: flex;
-                flex-direction: column-reverse;
-                padding-left: 0;
+            & > .left {
+                top: 900px;
+                position: absolute;
+                left: calc(50% - 155px);
+                max-width: 310px;
+                text-align: center;
+                margin-bottom: 120px;
 
-                & > .left {
-                    width: 100%;
-                    max-width: 370px;
-                    text-align: center;
-                    margin-bottom: 120px;
-
-                    & > h1 {
-                        font-size: 50px;
-                    }
-
-                    & > p {
-                        padding: 0 10px;
-                    }
-
-                    & > button {
-                        justify-self: center;
-                    }
+                & > h1 {
+                    font-size: 40px;
+                    font-weight: 400;
                 }
 
-                & > .right {
-                    display: flex;
-                    justify-content: center;
-                    left: 0;
-                    top: 0;
-                    height: 630px;
-                    background-image: url("images/bg-intro-mobile.svg");
-                    background-repeat: no-repeat;
-                    background-position: center;
+                & > button {
+                    justify-self: center;
+                }
+            }
 
-                    & > img {
-                        width: 700px;
-                        height: 850px;
-                        position: absolute;
-                        top: -250px;
-                        left: unset;
-                    }
+            & > .right {
+                width: 100%;
+                height: 850px;
+                background-image: url("images/bg-intro-mobile.svg");
+                background-position: center;
+                background-size: 150% 150%;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: grid;
+                justify-items: center;
+                overflow-x: hidden;
+
+                & > img {
+                    width: 850px;
+                    height: 1000px;
+                    position: absolute;
+                    top: -170px;
                 }
             }
         }
@@ -468,34 +436,20 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-    body {
-        text-align: center;
-    }
-
-    header > nav > img {
-        height: 20px;
-    }
-
     main {
-        .next-generation > .next-gen > .left > h1 {
-            font-size: 40px;
-        }
-
-        & > .why-digitalbank,
-        & > article {
-            padding: 120px 0;
-        }
-
         & > .why-digitalbank > .reasons,
         & > article > .articles {
             width: fit-content;
             grid-template-columns: 1fr;
+            gap: 80px;
         }
 
         & > .why-digitalbank {
+            text-align: center;
+
             & > h2 {
                 width: 260px;
-                font-size: 30px;
+                font-size: 35px;
             }
 
             & > p {
@@ -512,10 +466,11 @@ footer {
             }
         }
 
-        & > article > .articles {
-            text-align: initial;
+        & > article {
+            h2 {
+                font-size: 35px !important;
+                text-align: center;
+            }
         }
     }
 }
-
-
